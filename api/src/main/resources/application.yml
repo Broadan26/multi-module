@@ -1,0 +1,26 @@
+quarkus:
+  http:
+    auth:
+      permission:
+        authentication-required:
+          policy: authenticated
+          methods: DELETE,POST,PUT
+          paths: /*
+        permit-all:
+          policy: permit
+          paths: /
+    cors:
+      ~: true
+      origins: '*'
+    port: 8080
+    static-resources:
+      index-page: index.html
+  log:
+    console:
+      enable: true
+  smallrye-openapi:
+    enable: true
+    path: swagger
+  swagger-ui:
+    enable: true
+    path: swagger-ui
