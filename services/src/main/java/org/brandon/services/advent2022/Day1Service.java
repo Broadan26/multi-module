@@ -64,7 +64,7 @@ public class Day1Service {
      * @param day1File The file that was provided by the calling method
      * @return A list of maps that indicating the number of items and calories of each elf
      */
-    public static List<Map<Integer, Integer>> parseDay1File(File day1File) throws IOException {
+    public List<Map<Integer, Integer>> parseDay1File(File day1File) throws IOException {
         List<Map<Integer, Integer>> parsedFile = new ArrayList<>();
         Map<Integer, Integer> currentEntry = new HashMap<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(day1File.getPath()))) {
@@ -84,10 +84,15 @@ public class Day1Service {
                 // Move to the next line to continue the loop
                 currentLine = reader.readLine();
             }
+            if (!currentEntry.isEmpty()) {
+                parsedFile.add(currentEntry);
+            }
+
         } catch (Exception ex) {
-            LOG.error(ex.getMessage());
+            LOG.error("File Parsing Failed with error: {}", ex.getMessage());
             throw new IOException("Invalid file provided");
         }
+
         return parsedFile;
     }
 
