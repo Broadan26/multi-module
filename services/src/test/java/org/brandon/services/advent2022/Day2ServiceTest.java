@@ -9,42 +9,32 @@ import org.junit.jupiter.api.Test;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.List;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @QuarkusTest
-class Day1ServiceTest {
+class Day2ServiceTest {
 
     @Inject
-    Day1Service day1Service;
+    Day2Service day2Service;
 
     private static File testFile;
     private static File badFile;
-    private static final String FILE_NAME = "src/test/resources/testFile1.txt";
-    private static final String BAD_FILE_NAME = "src/test/resources/badFile1.txt";
+    private static final String FILE_NAME = "src/test/resources/testFile2.txt";
+    private static final String BAD_FILE_NAME = "src/test/resources/badFile2.txt";
 
     @BeforeAll
     static void setup() throws IOException {
         testFile = new File(FILE_NAME);
         try (FileWriter writer = new FileWriter(FILE_NAME)) {
             writer.write("""
-                    1000
-                    2000
-                    3000
-
-                    4000
-
-                    5000
-                    6000
-
-                    7000
-                    8000
-                    9000
-
-                    10000""");
+                    A Y
+                    B X
+                    C Z
+                    
+                    """);
         } catch (IOException ex) {
             ex.printStackTrace();
             throw new IOException("Could not write to test file");
@@ -53,11 +43,10 @@ class Day1ServiceTest {
         badFile = new File(BAD_FILE_NAME);
         try (FileWriter writer = new FileWriter(BAD_FILE_NAME)) {
             writer.write("""
-                    1000
-                    2000
-                    3000
-                    
-                    abcd
+                    A Y
+                    B X
+                    C Z
+                    B B
                     """);
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -80,25 +69,24 @@ class Day1ServiceTest {
 
     @Test
     void testPart1Solve() throws IOException {
-        long answer = day1Service.part1Solve(testFile);
-        assertEquals(24_000L, answer);
+        long answer = day2Service.part1Solve(testFile);
+        assertEquals(15L, answer);
     }
 
     @Test
     void testPart2Solve() throws IOException {
-        long answer = day1Service.part2Solve(testFile);
-        assertEquals(45_000L, answer);
+        long answer = day2Service.part2Solve(testFile);
+        assertEquals(12L, answer);
     }
 
     @Test
-    void testParseDay1File() throws IOException {
-        List<Map<Integer, Integer>> parsedFile = day1Service.parseDay1File(testFile);
-        assertEquals(5, parsedFile.size());
-        assertEquals(1, parsedFile.getFirst().get(1000));
+    void testParseDay2File() throws IOException {
+        Map<String, Integer> parsedFile = day2Service.parseDay2File(testFile);
+        System.out.println(parsedFile);
 
         IOException exception = assertThrows(
                 IOException.class,
-                () -> day1Service.parseDay1File(badFile),
+                () -> day2Service.parseDay2File(badFile),
                 "Expected IO Exception from bad file, IOException did not occur");
         assertEquals("Invalid file provided", exception.getMessage());
     }

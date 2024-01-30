@@ -114,7 +114,7 @@ public class Day2Service {
      * @param day2File The file that was provided by the calling method
      * @return A map of the counts of each possible combination of file inputs
      */
-    public static Map<String, Integer> parseDay2File(File day2File) throws IOException {
+    public Map<String, Integer> parseDay2File(File day2File) throws IOException {
         Map<String, Integer> parsedFile = createCountMap();
         try (BufferedReader reader = new BufferedReader(new FileReader(day2File.getPath()))) {
             String currentLine = reader.readLine();
@@ -147,7 +147,7 @@ public class Day2Service {
      * Helper method which creates a custom map of all possible combinations of inputs and an initial starting count of 0 for each.
      * @return The created hashmap
      */
-    private static Map<String, Integer> createCountMap() {
+    private Map<String, Integer> createCountMap() {
         Map<String, Integer> parsedFile = new HashMap<>();
         parsedFile.put("A X", 0);
         parsedFile.put("A Y", 0);
