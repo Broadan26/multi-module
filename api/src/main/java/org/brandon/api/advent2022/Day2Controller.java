@@ -12,7 +12,7 @@ import org.jboss.resteasy.reactive.multipart.FileUpload;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@Path("advent2022/day2")
+@Path("/v1/advent2022/day2")
 public class Day2Controller {
 
     private final Day2Service day2Service;
@@ -33,7 +33,7 @@ public class Day2Controller {
      */
     @POST
     @Path("part1")
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
     public Response part1Endpoint(@RestForm("file") FileUpload file) {
         try {
             long day2Answer = day2Service.part1Solve(file.uploadedFile().toFile());
@@ -51,7 +51,7 @@ public class Day2Controller {
      */
     @POST
     @Path("part2")
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
     public Response part2Endpoint(@RestForm("file") FileUpload file) {
         try {
             long day2Answer = day2Service.part2Solve(file.uploadedFile().toFile());
