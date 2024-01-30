@@ -82,7 +82,9 @@ class Day2ServiceTest {
     @Test
     void testParseDay2File() throws IOException {
         Map<String, Integer> parsedFile = day2Service.parseDay2File(testFile);
-        System.out.println(parsedFile);
+        assertEquals(0, parsedFile.get("A X"));
+        assertEquals(1, parsedFile.get("A Y"));
+        assertEquals(9, parsedFile.size());
 
         IOException exception = assertThrows(
                 IOException.class,
