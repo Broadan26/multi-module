@@ -19,7 +19,7 @@ public class Day3Controller {
     private static final Logger LOG = LoggerFactory.getLogger(Day3Controller.class);
 
     /**
-     * Builds the Day2 Controller and injects necessary beans.
+     * Builds the Day3 Controller and injects necessary beans.
      * @param day3Service The injected service related to the Day3 Controller
      */
     public Day3Controller(Day3Service day3Service) {
