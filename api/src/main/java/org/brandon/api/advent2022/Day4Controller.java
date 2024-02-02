@@ -36,8 +36,8 @@ public class Day4Controller {
     @Produces(MediaType.APPLICATION_JSON)
     public Response part1Endpoint(@RestForm("file") FileUpload file) {
         try {
-            long day2Answer = day4Service.part1Solve(file.uploadedFile().toFile());
-            return ResponseCreation.buildAdventSuccessResponse(day2Answer);
+            long day4Answer = day4Service.part1Solve(file.uploadedFile().toFile());
+            return ResponseCreation.buildAdventSuccessResponse(day4Answer);
         } catch (Exception ex) {
             LOG.error(ex.getMessage());
             return ResponseCreation.buildAdventFailureResponse(ex.getMessage());
@@ -54,8 +54,8 @@ public class Day4Controller {
     @Produces(MediaType.APPLICATION_JSON)
     public Response part2Endpoint(@RestForm("file") FileUpload file) {
         try {
-            long day2Answer = day4Service.part2Solve(file.uploadedFile().toFile());
-            return ResponseCreation.buildAdventSuccessResponse(day2Answer);
+            long day4Answer = day4Service.part2Solve(file.uploadedFile().toFile());
+            return ResponseCreation.buildAdventSuccessResponse(day4Answer);
         } catch (Exception ex) {
             LOG.error(ex.getMessage());
             return ResponseCreation.buildAdventFailureResponse(ex.getMessage());
