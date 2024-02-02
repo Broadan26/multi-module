@@ -26,6 +26,11 @@ public class Day5Controller {
         this.day5Service = day5Service;
     }
 
+    /**
+     * Solves the problem file provided for day 5 part 1 of Advent of Code 2022
+     * @param file The problem file
+     * @return A response containing the status of the request and the result
+     */
     @POST
     @Path("part1")
     @Produces(MediaType.APPLICATION_JSON)
@@ -39,6 +44,11 @@ public class Day5Controller {
         }
     }
 
+    /**
+     * Solves the problem file provided for day 5 part 2 of Advent of Code 2022
+     * @param file The problem file
+     * @return A response containing the status of the request and the result
+     */
     @POST
     @Path("part2")
     @Produces(MediaType.APPLICATION_JSON)
