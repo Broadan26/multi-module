@@ -13,10 +13,23 @@ public class ResponseCreation {
 
     /**
      * Creates a response with a success status and an Advent of Code answer
-     * @param answer The answer to the current Advent of Code problem
+     * @param answer The answer to the current Advent of Code problem as a long
      * @return A response containing the fields of response and answer
      */
     public static Response buildAdventSuccessResponse(long answer) {
+        return Response.ok()
+                .entity(new JsonObject()
+                        .put(RESPONSE, SUCCESS)
+                        .put(ANSWER, answer))
+                .build();
+    }
+
+    /**
+     * Creates a response with a success status and an Advent of Code answer
+     * @param answer The answer to the current Advent of Code problem as a string
+     * @return A response containing the fields of response and answer
+     */
+    public static Response buildAdventSuccessResponse(String answer) {
         return Response.ok()
                 .entity(new JsonObject()
                         .put(RESPONSE, SUCCESS)
