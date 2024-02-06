@@ -123,6 +123,9 @@
           <systemPropertyVariables>
             <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
             <quarkus.bootstrap.effective-model-builder>true</quarkus.bootstrap.effective-model-builder>
+            <quarkus.jacoco.data-file>${maven.multiModuleProjectDirectory}/target/jacoco.exec</quarkus.jacoco.data-file>
+            <quarkus.jacoco.reuse-data-file>true</quarkus.jacoco.reuse-data-file>
+            <quarkus.jacoco.report-location>${maven.multiModuleProjectDirectory}/target/coverage</quarkus.jacoco.report-location>
           </systemPropertyVariables>
         </configuration>
       </plugin>
