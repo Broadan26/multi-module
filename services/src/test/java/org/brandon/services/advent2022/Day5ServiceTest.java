@@ -45,7 +45,12 @@ class Day5ServiceTest {
         badFile = new File(BAD_FILE_NAME);
         try (FileWriter writer = new FileWriter(BAD_FILE_NAME)) {
             writer.write("""
-                    Bad File
+                    move 1 from 3 to 9
+                    move 2 from 2 to 1
+                    move a from b to c
+                    move 3 from 5 to 4
+                    move 1 from 1 to 8
+                    move 1 from 3 to 9
                     """);
         } catch (IOException ex) {
             ex.printStackTrace();
