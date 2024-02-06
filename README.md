@@ -1,6 +1,8 @@
 # Multi-Module Quarkus Project
 
-[![Multi-Module CI Pipeline](https://github.com/Broadan26/multi-module/actions/workflows/maven-build.yml/badge.svg)](https://github.com/Broadan26/multi-module/actions/workflows/maven-build.yml)
+[![Build](https://github.com/Broadan26/multi-module/actions/workflows/maven-build.yml/badge.svg)](https://github.com/Broadan26/multi-module/actions/workflows/maven-build.yml)
+[![Coverage](https://raw.githubusercontent.com/Broadan26/multi-module/825606d2c279c714f155ade786d0166f12989a76/.github/badges/jacoco.svg)](https://github.com/Broadan26/multi-module/actions/workflows/maven-build.yml)
+[![Branches](https://raw.githubusercontent.com/Broadan26/multi-module/825606d2c279c714f155ade786d0166f12989a76/.github/badges/branches.svg)](https://github.com/Broadan26/multi-module/actions/workflows/maven-build.yml)
 
 ## Application Information
 * Quarkus 3.6.6
