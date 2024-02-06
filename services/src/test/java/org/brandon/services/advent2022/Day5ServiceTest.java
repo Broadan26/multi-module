@@ -84,7 +84,7 @@ class Day5ServiceTest {
     }
 
     @Test
-    void testParseDa54File() throws IOException {
+    void testParseDay5File() throws IOException {
         List<Map<String, Integer>> parsedList = day5Service.parseDay5File(testFile);
         assertEquals(5, parsedList.size());
         assertEquals(1, parsedList.getFirst().get("amount"));

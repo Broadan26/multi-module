@@ -68,7 +68,7 @@ class Day6ServiceTest {
     }
 
     @Test
-    void testParseDay4File() throws IOException {
+    void testParseDay6File() throws IOException {
         String parsedFile = day6Service.parseDay6File(testFile);
         assertEquals(30, parsedFile.length());
 
