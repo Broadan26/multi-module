@@ -63,6 +63,10 @@ public class Day6Service {
         String input;
         try (BufferedReader reader = new BufferedReader(new FileReader(day6File.getPath()))) {
             input = reader.readLine();
+
+            if (!input.matches("[a-zA-Z]+")) {
+                throw new IOException("File contains incorrect characters");
+            }
         } catch (Exception ex) {
             LOG.error(ex.getMessage());
             throw new IOException("Invalid file provided");
