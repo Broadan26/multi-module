@@ -19,7 +19,7 @@ public class Day8Controller {
     private static final Logger LOG = LoggerFactory.getLogger(Day8Controller.class);
 
     /**
-     * Builds the Day7 Controller and injects necessary beans.
+     * Builds the Day8 Controller and injects necessary beans.
      * @param day8Service The injected service related to the Day8 Controller
      */
     public Day8Controller(Day8Service day8Service) {
