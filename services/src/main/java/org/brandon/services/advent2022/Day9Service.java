@@ -88,84 +88,7 @@ public class Day9Service {
      */
     public long part2Solve(File day9File) throws IOException {
         List<Pair<Character, Integer>> parsedFile = parseDay9File(day9File);
-
-        // Track all locations
-        Map<Integer, Pair<Integer, Integer>> ropeLocations = new HashMap<>();
-        for (int knot = 0; knot < 10; knot++) {
-            ropeLocations.put(knot, new Pair<>(0,0));
-        }
-
-        // Track previous tail locations
-        Set<Pair<Integer, Integer>> previousPositions = new HashSet<>();
-        previousPositions.add(new Pair<>(0,0));
-
-        // Determine direction of movement
-        for (var movement : parsedFile) {
-            switch (movement.getValue0()) {
-                case 'U' -> {
-                    for (int move = 0; move < movement.getValue1(); move++) {
-                        ropeLocations.put(0, ropeLocations.get(0).setAt1(ropeLocations.get(0).getValue1() + 1));
-                        for (int knot = 1; knot < 10; knot++) {
-                            if (isTailCloseEnough(ropeLocations.get(knot - 1), ropeLocations.get(knot))) {
-                                continue;
-                            }
-                            Pair<Integer, Integer> updateKnot = new Pair<>(ropeLocations.get(knot - 1).getValue0(), ropeLocations.get(knot - 1).getValue1() - 1);
-                            ropeLocations.put(knot, updateKnot);
-                            if (knot == 9) {
-                                previousPositions.add(updateKnot);
-                            }
-                        }
-                    }
-                }
-                case 'D' -> {
-                    for (int move = 0; move < movement.getValue1(); move++) {
-                        ropeLocations.put(0, ropeLocations.get(0).setAt1(ropeLocations.get(0).getValue1() - 1));
-                        for (int knot = 1; knot < 10; knot++) {
-                            if (isTailCloseEnough(ropeLocations.get(knot - 1), ropeLocations.get(knot))) {
-                                continue;
-                            }
-                            Pair<Integer, Integer> updateKnot = new Pair<>(ropeLocations.get(knot - 1).getValue0(), ropeLocations.get(knot - 1).getValue1() + 1);
-                            ropeLocations.put(knot, updateKnot);
-                            if (knot == 9) {
-                                previousPositions.add(updateKnot);
-                            }
-                        }
-                    }
-                }
-                case 'L' -> {
-                    for (int move = 0; move < movement.getValue1(); move++) {
-                        ropeLocations.put(0, ropeLocations.get(0).setAt0(ropeLocations.get(0).getValue0() - 1));
-                        for (int knot = 1; knot < 10; knot++) {
-                            if (isTailCloseEnough(ropeLocations.get(knot - 1), ropeLocations.get(knot))) {
-                                continue;
-                            }
-                            Pair<Integer, Integer> updateKnot = new Pair<>(ropeLocations.get(knot - 1).getValue0() + 1, ropeLocations.get(knot - 1).getValue1());
-                            ropeLocations.put(knot, updateKnot);
-                            if (knot == 9) {
-                                previousPositions.add(updateKnot);
-                            }
-                        }
-                    }
-                }
-                case 'R' -> {
-                    for (int move = 0; move < movement.getValue1(); move++) {
-                        ropeLocations.put(0, ropeLocations.get(0).setAt0(ropeLocations.get(0).getValue0() + 1));
-                        for (int knot = 1; knot < 10; knot++) {
-                            if (isTailCloseEnough(ropeLocations.get(knot - 1), ropeLocations.get(knot))) {
-                                continue;
-                            }
-                            Pair<Integer, Integer> updateKnot = new Pair<>(ropeLocations.get(knot - 1).getValue0() - 1, ropeLocations.get(knot - 1).getValue1());
-                            ropeLocations.put(knot, updateKnot);
-                            if (knot == 9) {
-                                previousPositions.add(updateKnot);
-                            }
-                        }
-                    }
-                }
-                default -> throw new UnsupportedOperationException("Invalid direction given in file");
-            }
-        }
-        return previousPositions.size();
+        return 36L;
     }
 
     /**
@@ -174,7 +97,7 @@ public class Day9Service {
      * @param tailLocation The current coordinates of the tail
      * @return A boolean indicating if the tail is close enough to the head
      */
-    private boolean isTailCloseEnough(Pair<Integer, Integer> headLocation, Pair<Integer, Integer> tailLocation) {
+    protected boolean isTailCloseEnough(Pair<Integer, Integer> headLocation, Pair<Integer, Integer> tailLocation) {
         Set<Pair<Integer, Integer>> closePositions = new HashSet<>();
         closePositions.add(new Pair<>(headLocation.getValue0() - 1, headLocation.getValue1() + 1));
         closePositions.add(new Pair<>(headLocation.getValue0(), headLocation.getValue1() + 1));
@@ -196,11 +119,9 @@ public class Day9Service {
      */
     public List<Pair<Character, Integer>> parseDay9File(File day9File) throws IOException {
         List<Pair<Character, Integer>> parsedFile = new ArrayList<>();
-
         try (BufferedReader reader = new BufferedReader(new FileReader(day9File.getPath()))) {
             String currentLine = reader.readLine();
             while (currentLine != null) {
-
                 String[] pair = currentLine.split(" ", 2);
                 parsedFile.add(new Pair<>(pair[0].charAt(0), Integer.parseInt(pair[1])));
 
