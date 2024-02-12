@@ -172,7 +172,7 @@ class Day8ServiceTest {
     }
 
     @Test
-    void testParseDay7File() throws IOException {
+    void testParseDay8File() throws IOException {
         List<List<Integer>> parsedFile = day8Service.parseDay8File(testFile);
         assertEquals(5, parsedFile.size());
         assertEquals(3, parsedFile.getFirst().getFirst());
