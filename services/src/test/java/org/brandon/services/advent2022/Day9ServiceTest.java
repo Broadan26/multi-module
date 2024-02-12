@@ -141,7 +141,7 @@ class Day9ServiceTest {
     }
 
     @Test
-    void testParseDay8File() throws IOException {
+    void testParseDay9File() throws IOException {
         List<Pair<Character, Integer>> parsedFile = day9Service.parseDay9File(testFile);
         assertEquals(8, parsedFile.size());
         assertEquals('R', parsedFile.getFirst().getValue0());
