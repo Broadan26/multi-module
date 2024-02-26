@@ -45,7 +45,7 @@ public class Day10Service {
                     currentValue += operation.getNumber();
                 }
                 default -> {
-                    LOG.error("Invalid file provided - Action: " + operation.getAction());
+                    LOG.error("Invalid file provided - Action: {}", operation.getAction());
                     throw new IOException("Invalid action in file");
                 }
             }
@@ -85,7 +85,7 @@ public class Day10Service {
                     location += operation.getNumber();
                 }
                 default -> {
-                    LOG.error("Invalid file provided - Action: " + operation.getAction());
+                    LOG.error("Invalid file provided - Action: {}", operation.getAction());
                     throw new IOException("Invalid action in file");
                 }
             }
@@ -101,7 +101,7 @@ public class Day10Service {
      * @param currentVal The value to be multiplied with the cycle
      * @return A long representing the updated sum
      */
-    private long cycleCheckPartOne(int cycle, long sum, long currentVal) {
+    protected long cycleCheckPartOne(int cycle, long sum, long currentVal) {
         if (cycle == 20 || (cycle + 20) % 40 == 0) {
             sum += cycle * currentVal;
         }
