@@ -193,6 +193,7 @@ public class Day11Service {
             monkey.setOperationType("DIVIDE");
             operationLine = operationLine.replace("/ ", "");
         } else {
+            LOG.error("No operators found in the provided file");
             throw new IOException("Invalid file provided");
         }
 
