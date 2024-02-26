@@ -259,15 +259,38 @@ class Day10ServiceTest {
 
     @Test
     void testCycleCheckPartTwo() {
+        // Test line is under length of 40
         StringBuilder result = new StringBuilder();
         StringBuilder currentLine = new StringBuilder();
-        String symbol = "";
+        String symbol = "@";
         StringBuilder outcome = day10Service.cycleCheckPartTwo(result, currentLine, symbol);
+
+        assertEquals(symbol, outcome.toString());
+
+        // Test line is size 40
+        result = new StringBuilder();
+        currentLine = new StringBuilder();
+        String fortyCharLength = "FortyFortyFortyFortyFortyFortyFortyForty";
+        currentLine.append(fortyCharLength);
+        symbol = "@";
+        outcome = day10Service.cycleCheckPartTwo(result, currentLine, symbol);
+
+        assertEquals(symbol, outcome.toString());
+        assertEquals(fortyCharLength + "\n",result.toString());
     }
 
     @Test
     void testCheckLocation() {
+        // Check for #
+        int cycle = 41;
+        int location = 0;
 
+        assertEquals("#", day10Service.checkLocation(cycle, location));
+
+        // Check for .
+        cycle = 44;
+        location = 1;
+        assertEquals(".", day10Service.checkLocation(cycle, location));
     }
 
     @Test
