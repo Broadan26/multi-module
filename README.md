@@ -5,7 +5,7 @@
 [![Branches](https://raw.githubusercontent.com/Broadan26/multi-module/825606d2c279c714f155ade786d0166f12989a76/.github/badges/branches.svg)](https://github.com/Broadan26/multi-module/actions/workflows/maven-build.yml)
 
 ## Application Information
-* Quarkus 3.7.2
+* Quarkus 3.7.4
 * Java 21 (Corretto default)
 
 ## Requirements
