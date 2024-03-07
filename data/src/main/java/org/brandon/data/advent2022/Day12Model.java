@@ -1,5 +1,8 @@
 package org.brandon.data.advent2022;
 
+import lombok.Data;
+
+@Data
 public class Day12Model {
 
     // Base grid information

@@ -62,6 +62,11 @@ public class Day12Service {
             String currentLine = reader.readLine();
             for (int i = 0; i < height; i++) {
                 grid[i] = currentLine.toCharArray();
+
+                if (grid[i].length != length) {
+                    throw new IOException("Row " + i + " of file does not have uniform length");
+                }
+
                 currentLine = reader.readLine();
             }
         } catch (Exception ex) {
