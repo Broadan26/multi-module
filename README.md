@@ -7,12 +7,12 @@
 ---
 
 ## Application Information
-* Quarkus 3.7.4
-* Java 21 (Corretto default)
+* Quarkus 3.8.4
+* Java 21 (Built with Amazon Corretto)
 
 ## Requirements
 * Maven 3.8.2+/3.9/4.0
-* Java 21 (Corretto default)
+* Java 21
 * Git
 * JetBrains IntelliJ (to take advantage of the built-in run profile)
 

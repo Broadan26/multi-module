@@ -13,12 +13,12 @@
     <module>services</module>
   </modules>
   <properties>
-    <compiler-plugin.version>3.12.1</compiler-plugin.version>
-    <dependency.version.json>20240205</dependency.version.json>
-    <dependency.version.lombok>1.18.30</dependency.version.lombok>
+    <compiler-plugin.version>3.13.0</compiler-plugin.version>
+    <dependency.version.json>20240303</dependency.version.json>
+    <dependency.version.lombok>1.18.32</dependency.version.lombok>
     <dependency.version.mapstruct>1.5.5.Final</dependency.version.mapstruct>
     <dependency.version.mockito-inline>5.2.0</dependency.version.mockito-inline>
-    <jandex-maven-plugin.version>3.1.6</jandex-maven-plugin.version>
+    <jandex-maven-plugin.version>3.1.8</jandex-maven-plugin.version>
     <maven.compiler.args>-parameters</maven.compiler.args>
     <maven.compiler.parameters>true</maven.compiler.parameters>
     <maven.compiler.release>21</maven.compiler.release>
@@ -28,7 +28,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
     <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
-    <quarkus.platform.version>3.7.4</quarkus.platform.version>
+    <quarkus.platform.version>3.8.4</quarkus.platform.version>
     <skipITs>true</skipITs>
     <surefire-plugin.version>3.2.5</surefire-plugin.version>
   </properties>
