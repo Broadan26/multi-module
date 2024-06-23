@@ -1,0 +1,9 @@
+quarkus:
+  http:
+    cors:
+      ~: true
+      origins: '*'
+    port: 8090
+  log:
+    console:
+      enable: true

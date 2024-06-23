@@ -7,7 +7,7 @@
 ---
 
 ## Application Information
-* Quarkus 3.8.4
+* Quarkus 3.8.5
 * Java 21 (Built with Amazon Corretto)
 
 ## Requirements
@@ -15,6 +15,10 @@
 * Java 21
 * Git
 * JetBrains IntelliJ (to take advantage of the built-in run profile)
+
+---
+
+##
 
 ---
 
@@ -29,12 +33,12 @@
   * Ensure the version control is Git and choose a suitable directory for the project
 * Then click clone and wait for the source repo to be cloned to your machine
 
-## 3. Setup the Project Settings
+## 3. Set up the Project Settings
 * Click on File -> Project Structure
 * On the Project tab, ensure that the SDK chosen is SDK21
 * On the Modules tab, ensure that the Module SDK chosen is SDK21
 
-## 4. Setup the Environment
+## 4. Set up the Environment
 * This section has already been configured for developers, but additional custom runs can be configured
   * IntelliJ should recognize the project as a Quarkus + Maven Build with multiple submodules
   * In the .run folder is an xml file containing the run information to get started right away
@@ -46,11 +50,12 @@
     * Underneath the Environment tab select `Configuration`
       * Tick the box for `Resolve Workplace Artifacts`
       * This will ensure that the project looks for modules and dependencies in the project space before searching on Maven Central
+      * If for some reason the `Resolve Workplace Artifacts` box doesn't exist, you can modify that setting in the .run configuration file directly
 
 ## 5. Run the Application
 * Click on Run -> Run `Run Application`
   * This should download all the required Quarkus dependencies via Maven
-  * It will also build the core, data, and services submodules that the primary application module, api, relies upon
+  * It will also build the core, data, and services submodules that the primary application modules (api, graphql, etc.) rely upon
   * You'll know that Quarkus started up correctly if you see their splash mark in the console and a localhost url on port 8080
 
 ## 6. Useful Plugins

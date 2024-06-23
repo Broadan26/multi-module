@@ -11,6 +11,7 @@
     <module>core</module>
     <module>data</module>
     <module>services</module>
+    <module>graphql</module>
   </modules>
   <properties>
     <compiler-plugin.version>3.13.0</compiler-plugin.version>
@@ -28,7 +29,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
     <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
-    <quarkus.platform.version>3.8.4</quarkus.platform.version>
+    <quarkus.platform.version>3.8.5</quarkus.platform.version>
     <skipITs>true</skipITs>
     <surefire-plugin.version>3.2.5</surefire-plugin.version>
   </properties>
